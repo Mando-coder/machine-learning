@@ -71,6 +71,35 @@ When a split at a node occurs only a random subset of features $m$ are taken int
 ## Adaptive Boosting
 Adaptive Boosting (AdaBoosting) is a meta. It uses a series of weak learners (simplistic models) and combines them through a weighted sum. Each new model in the sum is based on the previous tree in the sum, making the model “adaptive”. 
 
+
+### Algorithm
+A set of predictions $y$ can be approximated using a very simple model $\hat y_0$, which will result in a set of errors $\epsilon_0$ 
+
+$$ y \approx \hat y_0 + \epsilon_0$$
+
+An additional model $\hat y_1$ can be introduced which aims to improve the total predictions, where the parameter $\lambda_1$ is chosen such that the new error $\epsilon_1$ is minimized. 
+
+$$ y \approx \hat y_0 + \lambda_1 \hat y_1 + \epsilon_1$$
+
+The final predictor $\hat y$ is thus a linear sum of weak learners
+
+$$ \hat y = \sum_{n=1}^{N} \lambda_n \hat y_n $$
+
+
+
+
+
+The complexity of each weak learner can be controlled. For tree based methods this parameter is $d$ and controls the number of splits ($d$ + 1 leaf nodes). This controls the interaction depth of the model. Often $d$ = 1 will work just fine, which is simple a tree stump (one root node and two leaf nodes). 
+
+#### Loss Function
+In order to strongly punish incorrect classifications, an [exponential loss function](https://en.wikipedia.org/wiki/Loss_functions_for_classification) is used in the algorithm. 
+
+In order to improve the speed at which the model learns, one can use "weights" to determine which data points need to be given priority during the training of each sub-model. For each model $n$ a set of weights can be calculated using the exponential loss function. 
+
+$$ \hat y = \sum_{n=1}^{N} \lambda_n \hat y_n $$
+
+$$ w_{i, n} = e^{-y_i \cdot \hat y_{n-1}} $$
+
 ### Boosting vs Bagging
 Similar to bagging, boosting is a general approach that may be applied to various statistical models for both classification and regression. 
 
