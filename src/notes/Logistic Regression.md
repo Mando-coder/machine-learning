@@ -106,32 +106,47 @@ $$ \hat p (X) = \frac{1}{1+e^{-(\beta_0 + \beta_1 X)}} $$
 $\hat p_{y=1} = P(x=X, y=1)$  
 $\hat p_{y=0} = P(x=X, y=0)$ 
 
+
+### Cost Function
 <!-- TODO: Add links to linear regression and gradient descent -->
 Similar to Linear Regression, a cost function can be defined which is then minimized using gradient descent. 
-<head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</head>
-
-<div>
-  <span class="matrix-container">
-    $$\begin{bmatrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9 \\
-    \end{bmatrix}$$
-  </span>
-</div>
 
 
-$$ \nabla_{\beta} J = 
-
+<!-- matrix in markdown not yet supported :( ) -->
+<!-- $$ \nabla_{\beta} J = 
 \begin{bmatrix}
     \frac{\partial J}{\partial \beta_0} \\
     \vdots \\
     \frac{\partial J}{\partial \beta_n} 
 \end{bmatrix} 
+= 0$$ -->
 
-= 0$$
+<p align="center">
+  <img src="images/gradient_descent.png" alt="probability logistic_function" width="180px"/>
+</p>
 
 
 Allowing the cost function $J$ to be the natural log of the negative likelihood $\mathcal{L}$ allows the multiplication terms to be turned into summation terms.
+
+$$ \ln(a\cdot b) = \ln (a) + \ln(b)$$
+
+$$ \prod \hat p_{y=1}(X)  = \sum \ln (\hat p_{y=1}(X)) $$
+
+The gradient descent method minimizes the cost function J (as the name suggests), so the negative natural log of the likelihood L is taken.
+
+$$ J(\beta) = -\ln(\mathcal{L})$$
+$$ J(\beta) = - (\sum \ln (\hat p_{y=1}(X)) + \sum \ln (1 - \hat p_{y=0}(X))$$
+
+In the loss function above, the data set needs to be subdivided into 2 subsets, First all the data points where $y$ = 1 are considered.
+
+$$\sum \ln (\hat p_{y=1}(X))$$
+
+Then all of the data points where $y$ = 0 are considered
+
+ $$\sum \ln (1 - \hat p_{y=0}(X)) $$
+
+However, by recognizing that the values of $y$ will only ever be 1 or 0, a mathematical trick may be used.
+
+$$ J(\beta) = - \sum (y \cdot \ln (\hat p) + (1-y) \cdot \ln (1 - \hat p))$$
+
+If $y$=1 then the first term of the summation will be $\ln⁡(\hat p)$  and the second term zero, and vice versa if $y$=0 then the first term in the summation will be zero, and the second term will be $\ln⁡(1−\hat p)$     
