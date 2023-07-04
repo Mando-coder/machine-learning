@@ -54,4 +54,4 @@ In betting the term odds is often used, which from a statistics point of view re
 
 $$ odds = \frac{p}{1-p} $$ 
 
-If this is applied to the (probability logistic function)[#probability-logistic-function] then a linear relationship can be obtained between the feature X and the natural log of the odds (a.k.a. log odds or logit)
+If this is applied to the [probability logistic function](#probability-logistic-function) then a linear relationship can be obtained between the feature X and the natural log of the odds (a.k.a. log odds or logit)
