@@ -7,18 +7,6 @@ $\sigma(x)=\frac{L}{1 + e^{-k(x-x_0)}}$
 $L$ = Height of the logistic function  
 $k$ = Steepness of logistic function  
 
-| Where |  |
-| -------- | ------- |
-| $L$ | = Height of the logistic function | 
-| $k$  | = Steepness of logistic function |
-
-| January | $250 |
-| February | $80 |
-| March | $420 |
-
-
-
-
 
 ## Table of Contents
 1) [Matplotlib](src/01_Matplotlib.ipynb)
