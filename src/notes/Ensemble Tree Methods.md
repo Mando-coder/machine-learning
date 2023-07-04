@@ -96,9 +96,11 @@ In order to strongly punish incorrect classifications, an [exponential loss func
 
 $$ E_m = \sum_{i} e^{-y_i \cdot \hat y_{m,i}} = \sum_{i} e^{-y_i \cdot \hat y_{m-1,i}} \cdot e^{-y_i \cdot \lambda_m \hat h_m} $$
 
-In order to improve the speed at which the model learns, one can use "weights" to determine which data points need to be given priority during the training of each sub-model. These weights are proportional to the associated error term in the exponential loss function. 
+In order to improve the speed at which the model learns, one can use "weights" to determine which data points need to be given priority during the training of the next sub-model. These weights are proportional to the associated error term in the exponential loss function. 
 
 $$ w_{i, m} = e^{-y_i \cdot \hat y_{m-1, i}} $$
+
+
 
 
 
