@@ -73,17 +73,17 @@ Adaptive Boosting (AdaBoosting) is a meta. It uses a series of weak learners (si
 
 
 ### Algorithm
-A set of predictions $y$ can be approximated using a very simple model $\hat y_0$, which will result in a set of errors $\epsilon_0$ 
+A set of predictions $y$ can be approximated using a very simple model $\hat h_0$, which will result in a set of errors $\epsilon_0$ 
 
-$$ y \approx \hat y_0 + \epsilon_0$$
+$$ y \approx \hat h_0 + \epsilon_0$$
 
-An additional model $\hat y_1$ can be introduced which aims to improve the total predictions, where the parameter $\lambda_1$ is chosen such that the new error $\epsilon_1$ is minimized. 
+An additional model $\hat h_1$ can be introduced which aims to improve the total predictions, where the parameter $\lambda_1$ is chosen such that the new error $\epsilon_1$ is minimized. 
 
-$$ y \approx \hat y_0 + \lambda_1 \hat y_1 + \epsilon_1$$
+$$ y \approx \hat h_0 + \lambda_1 \hat h_1 + \epsilon_1$$
 
-The final predictor $\hat y$ is thus a linear sum of weak learners
+The final predictor $\hat y_m$ is thus a linear sum of weak learners consisting of $m$ sub-models
 
-$$ \hat y = \sum_{n=1}^{N} \lambda_n \hat y_n $$
+$$ \hat y_m = \sum_{n=1}^{m} \lambda_n \hat h_n $$
 
 
 
@@ -92,13 +92,34 @@ $$ \hat y = \sum_{n=1}^{N} \lambda_n \hat y_n $$
 The complexity of each weak learner can be controlled. For tree based methods this parameter is $d$ and controls the number of splits ($d$ + 1 leaf nodes). This controls the interaction depth of the model. Often $d$ = 1 will work just fine, which is simple a tree stump (one root node and two leaf nodes). 
 
 #### Loss Function
-In order to strongly punish incorrect classifications, an [exponential loss function](https://en.wikipedia.org/wiki/Loss_functions_for_classification) is used in the algorithm. 
+In order to strongly punish incorrect classifications, an [exponential loss function](https://en.wikipedia.org/wiki/Loss_functions_for_classification) is used in the algorithm. For a prediction model $\hat y_m$ which has $m$ sub-models, the loss function is given by
 
-In order to improve the speed at which the model learns, one can use "weights" to determine which data points need to be given priority during the training of each sub-model. For each model $n$ a set of weights can be calculated using the exponential loss function. 
+$$ E_m = \sum_{i} e^{-y_i \cdot \hat y_{m,i}} = \sum_{i} e^{-y_i \cdot \hat y_{m-1,i}} \cdot e^{-y_i \cdot \lambda_m \hat h_m} $$
 
-$$ \hat y = \sum_{n=1}^{N} \lambda_n \hat y_n $$
+In order to improve the speed at which the model learns, one can use "weights" to determine which data points need to be given priority during the training of each sub-model. These weights are proportional to the associated error term in the exponential loss function. 
 
-$$ w_{i, n} = e^{-y_i \cdot \hat y_{n-1}} $$
+$$ w_{i, m} = e^{-y_i \cdot \hat y_{m-1, i}} $$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Boosting vs Bagging
 Similar to bagging, boosting is a general approach that may be applied to various statistical models for both classification and regression. 
