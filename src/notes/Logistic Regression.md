@@ -108,6 +108,20 @@ $\hat p_{y=0} = P(x=X, y=0)$
 
 <!-- TODO: Add links to linear regression and gradient descent -->
 Similar to Linear Regression, a cost function can be defined which is then minimized using gradient descent. 
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<div>
+  <span class="matrix-container">
+    $$\begin{bmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6 \\
+    7 & 8 & 9 \\
+    \end{bmatrix}$$
+  </span>
+</div>
+
 
 $$ \nabla_{\beta} J = 
 
