@@ -1,7 +1,21 @@
 # machine-learning
 A collection of useful notebooks which show how to implement various machine learning models and techniques. These notebooks are based on the material from the *Pierian Data - Python for Machine Learning & Data Science Masterclass* on Udemy. 
 
-$x=\frac{y}{z}$
+$\sigma(x)=\frac{L}{1 + e^{-k(x-x_0)}}$
+
+
+| Where |  |
+| -------- | ------- |
+| $L$ | = Height of the logistic function | 
+| $k$  | = Steepness of logistic function |
+
+| January | $250 |
+| February | $80 |
+| March | $420 |
+
+
+
+
 
 ## Table of Contents
 1) [Matplotlib](src/01_Matplotlib.ipynb)
