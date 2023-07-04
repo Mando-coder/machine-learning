@@ -3,6 +3,8 @@ A collection of useful notebooks which show how to implement various machine lea
 
 $\sigma(x)=\frac{L}{1 + e^{-k(x-x_0)}}$
 
+**Where**
+$L$ = Height of the logistic function 
 
 | Where |  |
 | -------- | ------- |
