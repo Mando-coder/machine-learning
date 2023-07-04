@@ -61,7 +61,7 @@ In the random forest approach a number of decision trees are created using boots
 In general you can choose as many estimators (number of trees) as you wish as the model is fast, and does not overfit. The reason no overfitting occurs is that each tree is composed of a subset of the data, and there are only so many possible unique combinations of the data. At some point trees become correlated because they are based on very similar data, and thus provide very similar predictions. In general $N$=100 is a good starting point
 
 ### Number of Subset Features
-When a split at a node occurs only a random subset of features $m$ are taken into account. When $m=p$, each subset is simply the entire feature set, resulting simply in bagging. It turns out that  $m \approx \sqrt(p)$ or $m \approx \frac{p}{3}  $ typically results in good predictions. 
+When a split at a node occurs only a random subset of features $m$ are taken into account. When $m=p$, each subset is simply the entire feature set, resulting simply in bagging. It turns out that  $m \approx \sqrt(p)$ or $m \approx \frac{p}{3}$ typically results in good predictions. 
 
 <p align="center">
   <img src="images/n_subset_features.png" alt="variable_importance" width="400px"/>
