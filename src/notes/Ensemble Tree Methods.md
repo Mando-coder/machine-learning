@@ -45,6 +45,29 @@ A visualization of the model may no longer be possible, but one can visualize ho
 
 In the graph above the Gini Index reduction (averaged out over NB number of trees) for each feature is shown relative to the Gini Index reduction of the Thal feature, indicating that Thal, Ca, and Chest Pain are the most important  variables (features). 
 
+### Limitations
+
+In the bagging approach a number of decision trees are created using bootstrapped training samples. The way each tree is constructed is through the use of the recursive binary split method. This method chooses which feature to split such that the RSS value is minimized. 
+
+The downside of this approach is that if there is one strong predictor along with a number of other moderately strong predictors, then the recursive binary split method will split nodes in a very similar fashion across trees, resulting in a set of highly correlated trees. 
+
+If one takes the average prediction from many correlated/similar trees, then the effect of the bootstrap effect is neglected; the reduction of the variance will be limited. 
+
+## Random Forest
+
+In the random forest approach a number of decision trees are created using bootstrapped training samples, similar to the bagging approach. However in order to avoid having many similar/correlated trees, for each node the split may only occur on a random subset of features $m$ from the total features $p$.  If there is a single strong predictor, then there is a $(p-m)/p$ chance that this predictor is not used for a given split at a node when constructing the tree. 
+
+### Number of Estimators
+In general you can choose as many estimators (number of trees) as you wish as the model is fast, and does not overfit. The reason no overfitting occurs is that each tree is composed of a subset of the data, and there are only so many possible unique combinations of the data. At some point trees become correlated because they are based on very similar data, and thus provide very similar predictions. In general $N$=100 is a good starting point
+
+### Number of Subset Features
+When a split at a node occurs only a random subset of features $m$ are taken into account. When $m=p$, each subset is simply the entire feature set, resulting simply in bagging. It turns out that  $m \approx \sqrt(p)$ or $m \approx \frac{p}{3}  $ typically results in good predictions. 
+
+<p align="center">
+  <img src="images/n_subset_features.png" alt="variable_importance" width="400px"/>
+</p>
+
+
 ## Adaptive Boosting
 Adaptive Boosting (AdaBoosting) is a meta. It uses a series of weak learners (simplistic models) and combines them through a weighted sum. Each new model in the sum is based on the previous tree in the sum, making the model “adaptive”. 
 
