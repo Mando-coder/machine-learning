@@ -5,6 +5,7 @@ $\sigma(x)=\frac{L}{1 + e^{-k(x-x_0)}}$
 
 **Where**  
 $L$ = Height of the logistic function  
+$k$ = Steepness of logistic function  
 
 | Where |  |
 | -------- | ------- |
