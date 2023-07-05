@@ -1,5 +1,6 @@
-# machine-learning
-A collection of useful notebooks which show how to implement various machine learning models and techniques. These notebooks are based on the material from the *Pierian Data - Python for Machine Learning & Data Science Masterclass* on Udemy. 
+# Machine Learning
+
+This repo is a centralized place for basic machine-learning concepts. It contains summaries of the most commonly used machine learning models, and includes Ipython Notebooks with their implementation in Scikit-Learn. This content is based on the material from the *Pierian Data - Python for Machine Learning & Data Science Masterclass* on Udemy, but in some cases extends the mathematical explanation a bit further.
 
 ## Table of Contents - Notes
 
