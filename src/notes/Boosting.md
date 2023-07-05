@@ -84,7 +84,7 @@ $$ \lambda_m = \frac{1}{2} \ln (\frac{1-\epsilon_m}{\epsilon_m})$$
 
 $$ \epsilon_m = \frac{W_{m, nc}}{W_m} $$
 
-The parameter $\lambda_m$ is therefore governed by the ratio of the sum of incorrect weights $W_{m,nc} to the sum of all the weights $W_m$. Here the weights represent the error terms of the previous ($m$ - 1) model
+The parameter $\lambda_m$ is therefore governed by the ratio of the sum of incorrect weights $W_{m,nc}$ to the sum of all the weights $W_m$. Here the weights represent the error terms of the previous ($m$ - 1) model
 
 $$ W_m = \sum_i w_{m,i} =\sum_i e^{-y_i \cdot \hat y_{m-1, i}} = E_{m-1} $$
 
