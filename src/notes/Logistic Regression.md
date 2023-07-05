@@ -107,7 +107,7 @@ $\hat p_{y=1} = P(x=X, y=1)$
 $\hat p_{y=0} = P(x=X, y=0)$ 
 
 
-### Cost Function
+## Cost Function
 <!-- TODO: Add links to linear regression and gradient descent -->
 Similar to Linear Regression, a cost function can be defined which is then minimized using gradient descent. 
 
@@ -126,13 +126,13 @@ Similar to Linear Regression, a cost function can be defined which is then minim
 </p>
 
 
-Allowing the cost function $J$ to be the natural log of the negative likelihood $\mathcal{L}$ allows the multiplication terms to be turned into summation terms.
+As the binary logistic regression function is based on probabilities, the the cost function $J$ will depend on the maximum likelihood $\mathcal{L}$. However, the likelihood is a series of products, while the gradient descent method works best with a cost function in the form of a linear summation. Taking the natural log of a product is equivalent to the summation of the natural logs of those same terms. 
 
 $$ \ln(a\cdot b) = \ln (a) + \ln(b)$$
 
 $$ \prod \hat p_{y=1}(X)  = \sum \ln (\hat p_{y=1}(X)) $$
 
-The gradient descent method minimizes the cost function J (as the name suggests), so the negative natural log of the likelihood L is taken.
+Allowing the cost function $J$ to be the natural log of the negative likelihood $\mathcal{L}$ allows the multiplication terms to be turned into summation terms. The gradient descent method minimizes the cost function $J$ (as the name suggests), hence the *negative* natural log of the likelihood L is taken.
 
 $$ J(\beta) = -\ln(\mathcal{L})$$
 $$ J(\beta) = - (\sum \ln (\hat p_{y=1}(X)) + \sum \ln (1 - \hat p_{y=0}(X))$$
