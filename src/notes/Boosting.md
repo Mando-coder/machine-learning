@@ -6,30 +6,51 @@ Bagging and random forest methods utilize many different versions of the same da
 
 The boosting method does not use subsets, but utilizes the entire data set. It combines trees of increasing complexity until the desired degree of accuracy is obtained. 
 
+
+## Gradient Boosting
+Gradient boosting can be used on any model, but is often used for decision trees. You start by predicting $y$ using a simple model $\hat y_0$, which will result in a set of residuals $r_1$ 
+
+$$ y \approx \hat y_0 + r_1$$
+
+
+In order to improve the accuracy of the predictions, an additional model $\hat r_1$ can be trained which uses the data $X$ to try and predict the residuals $r_1$. However the predictions $\hat r_1$ of $r_1$ wil not be perfect, leading to a set of residuals $r_2$
+
+$$y \approx \hat y_0 + \hat r_1 + r_2$$
+
+
+This process can be repeated until the residual is sufficiently small. 
+
+
+$$ y \approx \hat y_0 + \sum_n \hat r_n$$
+
+In order to converge more quickly a learning-rate parameter $\lambda$ is introduced, which takes a value between 0 and 1. In a more generalized form the prediction of $y$ is given by $y_m$ which consists of $m$ weak models $\hat h_m$. 
+
+$$ \hat y_m = \sum_{n=1}^m \lambda \hat h_n$$
+
+$$ \hat y_m = \hat y_{m-1} +\lambda \hat h_m$$
+
+The complexity of each weak learner $\hat h$ can be controlled. For tree based methods this parameter is $d$ and controls the number of splits ($d$ + 1 leaf nodes). This controls the interaction depth of the model. Often $d$ = 1 will work just fine, which is simple a tree stump (one root node and two leaf nodes). 
+
+
 ## Adaptive Boosting
 Adaptive Boosting (AdaBoosting) is a meta-model. It uses a series of weak learners (simplistic models) and combines them through a weighted sum. Each new model in the sum is based on the previous tree in the sum, making the model “adaptive”. 
 
+It is similar to gradient boosting in the sense that it is a linear sum of weak models. However with Gradient Boosting the learning rate $\lambda$ is constant, while with AdaBoosting the learning rate $\lambda_m$ depends on the error of the previous model. 
 
-### Algorithm
-A set of predictions $y$ can be approximated using a very simple model $\hat h_0$, which will result in a set of residuals $r_0$ 
 
-$$ y \approx \hat h_0 + r_0$$
-
-An additional model $\hat h_1$ can be introduced which aims to improve the total predictions, where the parameter $\lambda_1$ is chosen such that the new residuals $r_1$ are minimized. 
-
-$$ y \approx \hat h_0 + \lambda_1 \hat h_1 + r_1 $$
-
-The final predictor $\hat y_m$ is thus a linear sum of weak learners consisting of $m$ sub-models
 
 $$ \hat y_m = \sum_{n=1}^{m} \lambda_n \hat h_n $$
 
-The parameter $\lambda_n$ is chosen such that the error of the weak learner $\hat h_n$ is minimized. This is done by assigning weights to the misclassified data points, and fits the next weak learner on this. 
+$$ \hat y_m = \hat y_{m-1} + \lambda_m \hat h_m $$
+
+
+
+The learning rate $\lambda_m$ of the $m^{th}$ weak learner $\hat h_m$, is chosen such that the resulting error $E_m$ is minimized. By using a exponential loss function, it can be [shown](#loss-function---classification) that this can be achieved by using the *misclassified* data points of the previous iteration of the total model $\hat y_{m-1}$. 
 
 <p align="center">
   <img src="images/adaboost_visualization.png" alt="adaboost_visualization" width="800px"/>
 </p>
 
-The complexity of each weak learner $\hat h$ can be controlled. For tree based methods this parameter is $d$ and controls the number of splits ($d$ + 1 leaf nodes). This controls the interaction depth of the model. Often $d$ = 1 will work just fine, which is simple a tree stump (one root node and two leaf nodes). 
 
 
 
