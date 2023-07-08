@@ -57,6 +57,31 @@ $$\hat y = \beta_0 + \beta_1 X$$
 <span style="color:#6824ff">**Blue-Purple Line**</span>	linear regression fit (least squares line) $\hat y$ based on the black dots data set  
 <span style="color:#9dd2fa">**Light Blue Lines**</span>	linear least square lines $\hat y$ based on separately generated data sets
 
-In the graph above it can be seen that the prediction $\hat y$ (<span style="color:#6824ff">**$\hat y$**</span>) is slightly different than the true relationship $f(X)$ (<span style="color:#fa1c20">**Red Line**</span>). 
+In the graph above it can be seen that the prediction $\hat y$ (<span style="color:#6824ff">**Blue-Purple Line**</span>) is slightly different than the true relationship $f(X)$ (<span style="color:#fa1c20">**Red Line**</span>). 
 
-However if different data sets based on y are generated and linear regression is applied, then it can be seen that the average values of the light blue lines y ̂  approximate the true value f(X) quite well. 
+However if different data sets based on y are generated and linear regression is applied, then it can be seen that the average values of the light blue lines $\hat y$ approximate the true value $f(X)$ quite well. 
+
+### Estimation Bias
+Consider a random variable $Y$ with a true mean value of $μ$. If we take a set of measurements, we can compute the sample mean $\hat μ$ in order to estimate the true mean $μ$. Depending on the measurements we will sometimes overestimate the true mean, and sometimes underestimate the true mean, but if we repeat the process enough times and take the average of the sample means, it will converge to the true mean value. 
+
+An estimate is **biased** if the estimate systematically over or underestimates the true value
+
+An estimate is **unbiased**  if the estimate (on average) approximates the true value 
+
+In the case of the simulated data from before it can be seen that the estimated coefficients are unbiased, as the estimates (light blue lines) approximate the true values quite well
+
+
+### Residual Standard Error (RSE)
+Going back to the analogy of the mean value μ of a random variable Y, it is of interest to determine the accuracy of the sample mean μ ̂; how far off do we expect the sample mean μ ̂  to be from the true mean μ
+ 
+Assuming the n observations are uncorrelated, this question is answered through the standard error of the sample mean "SE"(μ ̂ ). This shows us that the standard error of the sample mean decreases with the number of observations n
+"SE"(μ ̂ )^2="Var"(μ ̂ )=σ^2/n
+
+"Var"(μ ̂ )="Var"(1/n ∑_(i=1)^n▒Y_i )=1/n^2  ∑_(i=1)^n▒"Var" (Y_i ) =1/n^2  ∑_(i=1)^n▒σ^2 =σ^2/n
+
+
+Similarly we can determine the standard error of the estimate coefficients β_0  and β_1. 
+
+SE(β_0 )^2=σ^2 [1/n+x ̅^2/(∑▒(x_i−x ̅ )^2 )]                 SE(β_1 )^2=[σ^2/(∑▒(x_i−x ̅ )^2 )]                     σ^2="Var"(ϵ)
+
+In general, σ is not known, but can be estimated from the data through the Residual Standard Error (RSE) which depends on the RSS
