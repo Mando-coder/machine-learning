@@ -2,7 +2,7 @@
 Any machine learning model is based on the same principle: trying to make predictions based on a data set. For example a data set for house prices might look as follows.
 
 <p align="center">
-  <img src="images/data_breakdown.png" alt="data breakdown" width="350px"/>
+  <img src="../images/data_breakdown.png" alt="data breakdown" width="350px"/>
 </p>
 
 Here $X$ represents the features (variables/parameters describing the house) that are used to predict the house price $y$. In reality the prices y will be related to the features $X$ through some function $f(X)$, plus an uncertainty term $ϵ$

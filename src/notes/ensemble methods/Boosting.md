@@ -1,6 +1,6 @@
 # Boosting
 
-Similar to bagging, boosting is a general approach that may be applied to various statistical models for both classification and regression. 
+Similar to [bagging](Bagging%20and%20Random%20Forest.md#bagging), boosting is a general approach that may be applied to various statistical models for both classification and regression. 
 
 Bagging and random forest methods utilize many different versions of the same data set, sampled in different ways, where trees of similar complexity fitted on these subsets of the dataset are combined in order to give the final prediction. 
 
@@ -48,7 +48,7 @@ $$ \hat y_m = \hat y_{m-1} + \lambda_m \hat h_m $$
 The learning rate $\lambda_m$ of the $m^{th}$ weak learner $\hat h_m$, is chosen such that the resulting error $E_m$ is minimized. By using a exponential loss function, it can be [shown](#loss-function---classification) that this can be achieved by using the *misclassified* data points of the previous iteration of the total model $\hat y_{m-1}$. 
 
 <p align="center">
-  <img src="images/adaboost_visualization.png" alt="adaboost_visualization" width="800px"/>
+  <img src="../images/adaboost_visualization.png" alt="adaboost_visualization" width="800px"/>
 </p>
 
 

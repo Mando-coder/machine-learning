@@ -13,7 +13,7 @@ $k$ = Steepness of the logistic function
 $x_0$ = Location of the logistic function  
 
 <p align="center">
-  <img src="images/logistic_function.png" alt="logistic_function" width="800px"/>
+  <img src="../images/logistic_function.png" alt="logistic_function" width="800px"/>
 </p>
 
 ### Probability Logistic Function
@@ -26,7 +26,7 @@ $\beta_0$ = Shifts the logistic function sideways
 $\beta_1$ = Increases the steepness of the logistic function
 
 <p align="center">
-  <img src="images/probability_logistic_function.png" alt="probability logistic_function" width="800px"/>
+  <img src="../images/probability_logistic_function.png" alt="probability logistic_function" width="800px"/>
 </p>
 
 
@@ -34,7 +34,7 @@ $\beta_1$ = Increases the steepness of the logistic function
 The following data set shows the balance & income of the credit card holders, and whether or not they defaulted on their payments. There seems to be a strong correlation between the credit card holder's balance and whether or not they will default (center plot below).
 
 <p align="center">
-  <img src="images/binary_logistic_regression_data.png" alt="probability logistic_function" width="800px"/>
+  <img src="../images/binary_logistic_regression_data.png" alt="probability logistic_function" width="800px"/>
 </p>
 
 If linear regression is applied (left plot below) then the prediction model will perform quite poorly. However using the logistic function it is possible to predict the probability of default given a certain balance (right plot below).
@@ -46,7 +46,7 @@ $y$ = default on payment (0 = "no", 1 = "yes")
 $X$ = credit card balance
 
 <p align="center">
-  <img src="images/linear_vs_logistic_regression.png" alt="probability logistic_function" width="800px"/>
+  <img src="../images/linear_vs_logistic_regression.png" alt="probability logistic_function" width="800px"/>
 </p>
 
 ### Odds
@@ -67,7 +67,7 @@ $$ β_1≠ \frac{Δp}{ΔX} $$
 In addition, when considering probabilities close to 1 or close to 0, the log odds value will tend towards positive and negative infinity respectively. 
 
 <p align="center">
-  <img src="images/logistic_to_linear.png" alt="probability logistic_function" width="800px"/>
+  <img src="../images/logistic_to_linear.png" alt="probability logistic_function" width="800px"/>
 </p>
 
 <!-- TODO: add link to least squares -->
@@ -91,7 +91,7 @@ Consider two fits, fit 1 being a good fit (left plot below) and fit 2 being a po
 |3 | 1 | 0.95 | 0.73 | -->
 
 <p align="center">
-  <img src="images/likelihood.png" alt="probability logistic_function" width="800px"/>
+  <img src="../images/likelihood.png" alt="probability logistic_function" width="800px"/>
 </p>
 
 The likelihood of a dataset corresponding to a given fit/prediction can be determined by multiplying all the probabilities of each data point together.
@@ -122,7 +122,7 @@ Similar to Linear Regression, a cost function can be defined which is then minim
 = 0$$ -->
 
 <p align="center">
-  <img src="images/gradient_descent.png" alt="probability logistic_function" width="180px"/>
+  <img src="../images/gradient_descent.png" alt="probability logistic_function" width="180px"/>
 </p>
 
 

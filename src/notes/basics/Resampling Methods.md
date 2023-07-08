@@ -15,7 +15,7 @@ One of the most common cross-validation methods is the K-fold cross-validation w
 If this is repeated for all K parts, the mean error can be calculated. This way the entire data set is taken into account for training and testing.
 
 <p align="center">
-  <img src="images/k_fold_cross_validation.png" alt="k-fold cross validation" width="500px"/>
+  <img src="../images/k_fold_cross_validation.png" alt="k-fold cross validation" width="500px"/>
 </p>
 
 The most common choice is $k$ = 10  
@@ -29,7 +29,7 @@ This is a form of indirect data leakage, the algorithm itself does not take any 
 The solution is to separate the data set into train data, test data, and hold-out data. Cross-validation may be applied to different combinations of test and train data, but the hold-out data remains unchanged and unseen. After testing the hold-out data no more hyperparameter changes are allowed to be made.
 
 <p align="center">
-  <img src="images/hold_out_test_data.png" alt="hold out test data" width="500px"/>
+  <img src="../images/hold_out_test_data.png" alt="hold out test data" width="500px"/>
 </p>
 
 ## Bootstrap
@@ -70,5 +70,5 @@ The bootstrap method utilizes sampling of the total data set with replacement, w
 
 
 <p align="center">
-  <img src="images/bootstrap.png" alt="bootstrap" width="450px"/>
+  <img src="../images/bootstrap.png" alt="bootstrap" width="450px"/>
 </p>

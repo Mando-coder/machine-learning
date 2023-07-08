@@ -9,7 +9,7 @@ It can be shown mathematically that this error is made up by the variance and bi
 $$ E[MSE] = Var(\hat y) +[Bias(\hat y)] + Var(\epsilon)$$
 
 <p align="center">
-  <img src="images/trade_off.png" alt="probability logistic_function" width="800px"/>
+  <img src="../images/trade_off.png" alt="probability logistic_function" width="800px"/>
 </p>
 
 The figure above shows how the bias increases with degrees of complexity (model flexibility), the variance decreases with degrees of complexity, and how the MSE is the sum of the Bias (<span style="color:#87d7d8">blue</span>), Variance (<span style="color:#ed9a50">orange</span>) and irreducible error (<span style="color:#090909">dashed</span>)
@@ -33,14 +33,14 @@ If the model is *underfitted* (left) there is a large **bias**
 if the model is *overfitted* (right) there is a large **variance**
 
 <p align="center">
-  <img src="images/under_over_fitting.png" alt="under-over-fitting" width="800px"/>
+  <img src="../images/under_over_fitting.png" alt="under-over-fitting" width="800px"/>
 </p>
 
 ## Model Complexity
 In order to determine the right balance between these two, the model's complexity is compared to the resulting error. In general the error of the predictions of the training data will go down with model complexity until the model goes exactly through each data point. The error of the predictions of the test data on the other hand will increase again.
 
 <p align="center">
-  <img src="images/model_complexity.png" alt="model-complexity" width="300px"/>
+  <img src="../images/model_complexity.png" alt="model-complexity" width="300px"/>
 </p>
 
 The level of complexity should be chosen based on the lowest error of both the test & training data.
