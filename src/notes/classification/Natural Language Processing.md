@@ -119,10 +119,10 @@ To remedy this a smoothing factor $ \alpha$ may be applied, which simply increas
 
 ||Positive Review|Negative Review|
 |--|--|--|
-|"movie"| $10 + \alpha $|8 + $ \alpha$|
-|"actor"|2 + $ \alpha$|10 + $ \alpha$|
-|"great"|8 + $ \alpha$|0 + $ \alpha$|
-|"film"|4 + $ \alpha$|2 + $ \alpha$|
+|"movie"| $10 + \alpha $|$8 +  \alpha$|
+|"actor"|$ +  \alpha$|$10 +  \alpha$|
+|"great"|$8 +  \alpha$|$0 +  \alpha$|
+|"film"|$4 +  \alpha$|$2 +  \alpha$|
 
 ## Feature Extraction
 Most machine learning algorithms don't have raw text data is input, instead it needs to be converted into numerical data. 
