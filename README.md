@@ -5,6 +5,7 @@ This repo is a centralized place for basic machine-learning concepts. It contain
 ## Table of Contents - Notes
 
 1) Linear regression
+2) test
 
 ## Table of Contents - Notebooks
 1) [Matplotlib](src/notebooks/01_Matplotlib.ipynb)
