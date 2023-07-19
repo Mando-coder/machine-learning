@@ -72,17 +72,24 @@ In the case of the simulated data from before it can be seen that the estimated 
 
 
 ### Residual Standard Error (RSE)
-Going back to the analogy of the mean value $$ of a random variable $Y$, it is of interest to determine the accuracy of the sample mean $\hat μ$; how far off do we expect the sample mean $\hat μ$  to be from the true mean $\mu$
+Going back to the analogy of the mean value $\mu$ of a random variable $Y$, it is of interest to determine the accuracy of the sample mean $\hat μ$; how far off do we expect the sample mean $\hat μ$  to be from the true mean $\mu$
  
 Assuming the $n$ observations are uncorrelated, this question is answered through the standard error of the sample mean $SE(\hat μ)$. This shows us that the standard error of the sample mean decreases with the number of observations $n$
 
-$$ SE(\hat μ)^2=Var(\hat μ)= \frac{\sigma^2}{n} $$
-
 $$ \text{Var}(\hat μ)=\text{Var}(\frac{1}{n} \sum_{i=1}^n Y_i)= \frac{1}{n^2}  \text{Var}(\sum_{i=1}^n Y_i) =\frac{1}{n^2} \sum_{i=1}^n \sigma^2 =\frac{σ^2}{n} $$
 
+$$ SE(\hat μ)= \sqrt{Var(\hat μ)}= \frac{\sigma}{\sqrt{n}} $$
 
-Similarly we can determine the standard error of the estimate coefficients $β_0$  and $β_1$. 
+Similarly we can determine the standard error of the estimate coefficients $β_0$  and $β_1$ for the ordinary linear regression case.
 
-SE(β_0 )^2=σ^2 [1/n+x ̅^2/(∑▒(x_i−x ̅ )^2 )]                 SE(β_1 )^2=[σ^2/(∑▒(x_i−x ̅ )^2 )]                     σ^2="Var"(ϵ)
+$$ \text{SE}(\beta_0) ^2  = \sigma^2 [\frac{1}{n} + \frac{\bar x^2}{\sum (x_i - \bar x)^2}]$$
 
-In general, σ is not known, but can be estimated from the data through the Residual Standard Error (RSE) which depends on the RSS
+$$ \text{SE}(\beta_1) ^2 = \frac{\sigma^2}{\sum (x_i - \bar x)^2}$$
+
+
+
+In general, $\sigma$ is not known, but can be estimated by  Residual Standard Error (RSE) which depends on the RSS
+
+$$ \sigma \approx RSE = \sqrt{\frac{RSS}{n-2}} =\sqrt{\frac{\sum(y_i - \hat y_i)^2}{n-2}} $$
+
+
