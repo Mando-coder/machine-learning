@@ -61,6 +61,28 @@ In the graph above it can be seen that the prediction $\hat y$ (<span style="col
 
 However if different data sets based on y are generated and linear regression is applied, then it can be seen that the average values of the light blue lines $\hat y$ approximate the true value $f(X)$ quite well. 
 
+
+### Null Hypothesis
+When evaluating a model, the first question one should ask themselves is: *"is there a relationship between $X$ and $y$*? This question can be answered by setting up two hypotheses. In the case of ordinary linear regression the relationship between $X$ and $y$ is governed by $\beta_1$, the hypotheses can therefore be formulated as:
+
+**Null Hypothesis**
+
+> $H_0$ : There is **no** relationship between $X$ and $y$ $\rightarrow \beta_1 = 0$
+
+**Alternative Hypothesis** 
+> $H_a$ : There is **some** relationship between $X$ and $y$ $\rightarrow \beta_1 \neq 0$
+
+The first step in evaluating a model is rejecting the null hypothesis (i.e. ensuring a relationship exists between $X$ and $y$)
+
+### t-statistic
+
+
+
+
+
+
+
+
 ### Estimation Bias
 Consider a random variable $Y$ with a true mean value of $μ$. If we take a set of measurements, we can compute the sample mean $\hat μ$ in order to estimate the true mean $μ$. Depending on the measurements we will sometimes overestimate the true mean, and sometimes underestimate the true mean, but if we repeat the process enough times and take the average of the sample means, it will converge to the true mean value. 
 
