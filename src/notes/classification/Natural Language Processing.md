@@ -126,3 +126,85 @@ To remedy this a smoothing factor $ \alpha$ may be applied, which simply increas
 
 ## Feature Extraction
 Most machine learning algorithms don't have raw text data is input, instead it needs to be converted into numerical data. 
+
+### Count Vectorization / Term Frequency
+Count vectorization is the process of simply counting how often a word occurs in each document. Here each document is represented as a single string. The resulting count is in the form of a matrix, where the rows represent the documents and the columns the words/terms. 
+
+<p align="center">
+  <img src="../images/nlp_text.png" alt="logistic_function" width="450px"/>
+</p>
+
+
+
+<p align="center">
+  <img src="../images/document_term_matrix.png" alt="logistic_function" width="450px"/>
+</p>
+
+
+Each cell in the matrix can be computed by the term frequency function $\text{tf}$ based on the term $t$ (word) and document $d$ (string).
+
+$$ \text{count} =  \text{tf}(t, d) $$
+
+
+
+
+
+
+
+A lot of columns will have a lot of zeros, for this reason these matrices are stored as a **sparse matrix**. This is a way of re-writing a matrix with a lot of zeros into a smaller format. A sparse matrix is a collection of 3 arrays which can be used to reconstruct the original $n \times n$ matrix.
+
+* The value array represents all of the non-zero values in the matrix read from each row left to right. 
+* The index array represents the matrix column index of each value in the value array
+* The row pointer array represents the value array index of the values that appear first in the row
+
+
+<p align="center">
+  <img src="../images/sparse_matrix.png" alt="logistic_function" width="250px"/>
+</p>
+
+
+
+
+### Stop-Words
+Very common words in the English language (e.g. "a", "the", "in", etc.) are commonly used in every piece of text, but this doesn't mean they should receive a high weight. Most machine-learning applications have a library of stop-words which are automatically filtered out of the count vectorization matrix. 
+
+### TF-IDF Vectorization
+One of the main problems with using term frequency on its own is that words that occur often only in certain documents will receive low weights, even though they are key-words we want to include in our analysis. For this reason an additional **Inverse Document Frequency** (IDF) factor is introduced.
+
+This factor diminishes the weights of words that occur often in every document, and amplifies the weights of words that occur often only in specific documents. For example in a set of sports articles the importance of the word "run" should be diminished as every sport involves running, but the word "basketball" should be amplified as it is only relevant for sport articles about basketball. 
+
+First we consider a set $D$, which contains all of the documents $d_i$. 
+
+$$D = \{d_1, d_2, ..., d_n\}$$
+
+From this set we create a subset which is filled with documents $d$ which contain the word/term $t$
+
+$$\{d \in D : t\in d \}$$
+
+The length/size of this set is the number of documents that contain the word/term $t$. The $\text{idf}$ factor considers the inverse ratio of the number of documents that contain $t$ to the total number of documents $N$ and scales it using a logarithmic function. 
+
+$$\text{idf}(t, D) = \log(\frac{N}{|\{d \in D: t\in d\}|})$$
+
+The total TF-IDF factor is then given by
+
+$$\text{tfidf}(t, d, D) = \text{tf}(t,d) \cdot \text{idf}(t, D)$$
+
+It should be noted that there exist many variations for the definitions of  $\text{tf}$ and $\text{idf}$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
