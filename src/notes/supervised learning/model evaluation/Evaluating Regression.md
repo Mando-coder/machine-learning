@@ -49,7 +49,7 @@ $$\hat y = \beta_0 + \beta_1 X$$
 
 
 <p align="center">
-  <img src="../images/coefficient_accuracy.png" alt="adaboost_visualization" width="800px"/>
+  <img src="../../images/coefficient_accuracy.png" alt="coefficient_accuracy" width="800px"/>
 </p>
 
 **Black Dots** measurements from the data set $y$  

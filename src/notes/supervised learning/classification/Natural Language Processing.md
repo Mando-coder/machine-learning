@@ -11,7 +11,7 @@ $$ P(B|A) = \frac{P(B \cap A)}{P(A)} $$
 
 
 <p align="center">
-  <img src="../images/bayes_theorem.png" alt="logistic_function" width="450px"/>
+  <img src="../../images/bayes_theorem.png" alt="bayes_theorem" width="450px"/>
 </p>
 
 Since the intersect of $A$ and $B$ is the same as the intersect of $B$ and $A$, Bayes Theorem may be rewritten as
@@ -131,13 +131,13 @@ Most machine learning algorithms don't have raw text data is input, instead it n
 Count vectorization is the process of simply counting how often a word occurs in each document. Here each document is represented as a single string. The resulting count is in the form of a matrix, where the rows represent the documents and the columns the words/terms. 
 
 <p align="center">
-  <img src="../images/nlp_text.png" alt="logistic_function" width="450px"/>
+  <img src="../../images/nlp_text.png" alt="nlp_text" width="450px"/>
 </p>
 
 
 
 <p align="center">
-  <img src="../images/document_term_matrix.png" alt="logistic_function" width="450px"/>
+  <img src="../../images/document_term_matrix.png" alt="document_term_matrix" width="450px"/>
 </p>
 
 
@@ -159,7 +159,7 @@ A lot of columns will have a lot of zeros, for this reason these matrices are st
 
 
 <p align="center">
-  <img src="../images/sparse_matrix.png" alt="logistic_function" width="250px"/>
+  <img src="../../images/sparse_matrix.png" alt="sparse_matrix" width="250px"/>
 </p>
 
 

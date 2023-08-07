@@ -48,7 +48,7 @@ $$ \hat y_m = \hat y_{m-1} + \lambda_m \hat h_m $$
 The learning rate $\lambda_m$ of the $m^{th}$ weak learner $\hat h_m$, is chosen such that the resulting error $E_m$ is minimized. By using a exponential loss function, it can be [shown](#loss-function---classification) that this can be achieved by using the *misclassified* data points of the previous iteration of the total model $\hat y_{m-1}$. 
 
 <p align="center">
-  <img src="../images/adaboost_visualization.png" alt="adaboost_visualization" width="800px"/>
+  <img src="../../images/adaboost_visualization.png" alt="adaboost_visualization" width="800px"/>
 </p>
 
 

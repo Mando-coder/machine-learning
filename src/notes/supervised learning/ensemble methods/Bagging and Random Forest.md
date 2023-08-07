@@ -42,7 +42,7 @@ One advantage of a decision tree is that you can visualize the model easily (mod
 A visualization of the model may no longer be possible, but one can visualize how much each feature contributes on average to the predictions, this is called variable importance. The metric used is the decrease of the “error” (RSS for regression trees or node purity for classification trees) due to a split over a given feature, averaged over all $N_B$ number of trees. 
 
 <p align="center">
-  <img src="../images/variable_importance.png" alt="variable_importance" width="400px"/>
+  <img src="../../images/variable_importance.png" alt="variable_importance" width="400px"/>
 </p>
 
 In the graph above the Gini Index reduction (averaged out over NB number of trees) for each feature is shown relative to the Gini Index reduction of the Thal feature, indicating that Thal, Ca, and Chest Pain are the most important  variables (features). 
@@ -66,7 +66,7 @@ In general you can choose as many estimators (number of trees) as you wish as th
 When a split at a node occurs only a random subset of features $m$ are taken into account. When $m=p$, each subset is simply the entire feature set, resulting simply in bagging. It turns out that  $m \approx \sqrt(p)$ or $m \approx \frac{p}{3}$ typically results in good predictions. 
 
 <p align="center">
-  <img src="../images/n_subset_features.png" alt="variable_importance" width="400px"/>
+  <img src="../../images/n_subset_features.png" alt="variable_importance" width="400px"/>
 </p>
 
 
