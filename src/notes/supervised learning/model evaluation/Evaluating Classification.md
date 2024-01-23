@@ -26,6 +26,6 @@ If the predictions y are estimated using the grid shown above, then the error is
 
 The error rate is then given by
 
- <!-- $$1-E[ \text{max}_c{ P(y=c|X_{train}) }]$$ -->
+ $$1-E[ \text{max}_c P(y=c|X_{train}) ]$$
 
 However in real life the location of the Bayes Decision Boundary is not known, but we can design algorithms that closely approximate it. 
