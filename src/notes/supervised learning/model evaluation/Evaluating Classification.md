@@ -6,7 +6,7 @@ In the graph below a set of points with $X_1$ and $X_2$ coordinates are chosen. 
 
 The color of the data points represents their true class, the shaded region represents which color a data point falling in said region is most likely to belong to. The dashed purple line represents the **Bayes Decision Boundary**, and represents the line where the probability of belonging to either class is equal.
 
-| | |
+| Region | Probability|
 |---|---|
 |Blue grid region |		$P(y= \text{blue} \|X_1 \cap X_2)>0.5$ |
 |Orange grid region |	$P(y= \text{orange} \|X_1 \cap X_2)>0.5$|
