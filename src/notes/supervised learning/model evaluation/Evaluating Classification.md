@@ -18,10 +18,14 @@ The color of the data points represents their true class, the shaded region repr
 
 If the predictions y are estimated using the grid shown above, then the error is minimized. This error rate is known as the **Bayes Error Rate**. In this case the algorithm will try to maximize the probability that the estimations y belong to a category c. 
 
- $$ \text{max}_c \{ P(y=c|X_{train}) \}$$
+ <!-- $$ \text{max}_c \{ P(y=c|X_{train}) \}$$ -->
+
+ $$
+ P(y=c | X_{train})
+ $$
 
 The error rate is then given by
 
- $$1-E[ \text{max}_c{ P(y=c|X_{train}) }]$$
+ <!-- $$1-E[ \text{max}_c{ P(y=c|X_{train}) }]$$ -->
 
 However in real life the location of the Bayes Decision Boundary is not known, but we can design algorithms that closely approximate it. 
