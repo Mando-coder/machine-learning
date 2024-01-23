@@ -21,7 +21,7 @@ If the predictions y are estimated using the grid shown above, then the error is
  <!-- $$ \text{max}_c \{ P(y=c|X_{train}) \}$$ -->
 
  $$
- \text{max} _c P(y=c | X_{train})
+ \text{max}  P(y=c | X_{train})
  $$
 
 The error rate is then given by
