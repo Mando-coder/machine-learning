@@ -76,12 +76,9 @@ The first step in evaluating a model is rejecting the null hypothesis (i.e. ensu
 
 ### t-statistic
 
+### p-value
 
-
-
-
-
-
+### F-statistic
 
 ### Estimation Bias
 Consider a random variable $Y$ with a true mean value of $μ$. If we take a set of measurements, we can compute the sample mean $\hat μ$ in order to estimate the true mean $μ$. Depending on the measurements we will sometimes overestimate the true mean, and sometimes underestimate the true mean, but if we repeat the process enough times and take the average of the sample means, it will converge to the true mean value. 
